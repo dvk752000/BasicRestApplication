@@ -43,9 +43,3 @@ dockerRun {
     clean false
 }
 
-withGradle(gradle: "gradle-4.8",
-           JDK: "jdk1.8",
-           gradleProperties: "gradle.properties",
-           gradleCacheDir: ".gradle/caches/") {
-    sh "gradle build"
-}

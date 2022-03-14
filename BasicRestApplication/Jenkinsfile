@@ -7,9 +7,12 @@ pipeline {
 	    
         stage('Build') {
             steps {
-                withGradle {
-	    		sh './gradlew build'
-			  }
+                withGradle(gradle: "gradle-4.8",
+           JDK: "jdk1.8",
+           gradleProperties: "gradle.properties",
+           gradleCacheDir: ".gradle/caches/") {
+    sh "gradle build"
+}
             }
         }
          stage('Test') {
