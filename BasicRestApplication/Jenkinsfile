@@ -21,17 +21,17 @@ pipeline {
         }
          stage('Test') {
             steps {
-                sh './gradlew test'
+                sh './BasicRestApplication/gradlew test'
             }
         }
         stage('Build Docker Image') {
             steps {
-                sh './gradlew docker'
+                sh './BasicRestApplication/gradlew docker'
             }
         }
         stage('Run Docker Image') {
             steps {
-                sh './gradlew dockerRun'
+                sh './BasicRestApplication/gradlew dockerRun'
             }
         }
     }
