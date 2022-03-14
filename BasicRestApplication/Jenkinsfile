@@ -19,16 +19,5 @@ pipeline {
     			sh './BasicRestApplication/gradlew build'
             }
         }
-
-        stage('Build Docker Image') {
-            steps {
-                sh './BasicRestApplication/gradlew docker'
-            }
-        }
-        stage('Run Docker Image') {
-            steps {
-                sh './BasicRestApplication/gradlew dockerRun'
-            }
-        }
     }
 }
