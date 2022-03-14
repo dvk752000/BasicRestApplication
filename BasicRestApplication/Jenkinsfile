@@ -4,6 +4,14 @@ pipeline {
         pollSCM '* * * * *'
     }
     stages {
+    	
+    	stage('Init'){
+    	    steps{
+    	        sh './BasicRestApplication/gradlew init' 
+    	    }
+
+    	}
+
 	    
         stage('Build') {
             steps {
