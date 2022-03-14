@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  basicrestapplication:
+    image: basicrestapplication:latest
+    container_name: basicrestapplication
+    build:
+      context: ./basicrestapplication
+      args:
+        - APP_NAME=basicrestapplication
+        - APP_VERSION=0.0.1
+    environment:
+      SPRING_PROFILES_ACTIVE: dev
+    expose:
+      - 8081
+    ports:
+      - 8081:8081
